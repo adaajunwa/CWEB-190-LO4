@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>The Smartest Person I Know</title>
+        <script src="scripts/jquery-3.6.3.min.js"></script>
+    </head>
+
+    <body>
+        <p>
+            The smartest person to ever exist is <span id="smart">Alfred Einstein</span>.
+        </p>
+
+        <p>
+            <button id="btnCorrect">Correct the statement</button>
+        </p>
+    </body>
+    <script>
+        "use strict";
+       $("#btnCorrect").click(function() {
+            //const myName = document.createTextNode("Ernesto Basoalto");
+            // const myEm = document.createElement("em");
+            // myEm.appendChild(document.createTextNode("Ernesto Basoalto"));
+            //const mySpan = document.getElementById("smart");
+            // mySpan.replaceChild(myEm, mySpan.firstChild);
+            $("#smart").html(`<em>Ernesto Basoalto</em>`);
+        });
+    </script>
+</html>

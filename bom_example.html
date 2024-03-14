@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Examples</title>
+</head>
+<body>
+<h1>BOM Examples</h1>
+<div>
+  <button id="newWindow">Open New Window</button>
+  <button id="goBack">Take Me Back</button>
+  <button id="displayLocation">Display current location</button>
+  <button id="assignLocation">Assign to location object</button>
+  <button id="callReplace">Call replace() method</button>
+  <button id="resize">Resize and Center</button>
+</div>
+<script>
+    "use strict";
+    let newWindow;
+    document.getElementById("newWindow").onclick = function (){
+        newWindow = window.open('http://saskpolytech.ca',"saskWindow","width=1280,height=720");
+    }
+
+    document.getElementById("resize").onclick = function (){
+        //
+        const newWidth = 500;
+        const newHeight = 400;
+        const hPos = (screen.availWidth - newWidth)/2;
+        const vPos = (screen.availHeight - newHeight)/2;
+
+        let newWindow = window.open('http://saskpolytech.ca',"saskWindow","width=1280,height=720");
+
+
+        newWindow.resizeTo(newWidth,newHeight);
+        newWindow.moveTo(hPos,vPos);
+
+    }
+
+    document.getElementById("goBack").onclick = function (){
+        // use javascript to navigate this window back
+        window.history.back(); //history.back();
+    }
+
+    document.getElementById("displayLocation").onclick = function (){
+        //alert(location);
+        window.alert(window.location);
+    }
+
+    document.getElementById("assignLocation").onclick = function (){
+        //location.assign("https://www.w3schools.com/jsref/prop_win_location.asp");
+        location = "https://www.w3schools.com/jsref/prop_win_location.asp";
+    }
+
+    document.getElementById("callReplace").onclick = function (){
+        //
+        location.replace("https://www.w3schools.com/jsref/prop_win_location.asp")
+    }
+
+
+</script>
+</body>
+</html>

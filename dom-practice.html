@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!--
+Add an event handler to the button
+In the event handler:
+    Create a text node containing your name
+    Create an <em> element
+    Add the text node as a child of the <em> element
+    Find the <span> element whose contents you want to replace
+    Replace the <span> element’s only text node with your <em> element
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>The Smartest Person I Know</title>
+    </head>
+
+    <body>
+        <p>
+            The smartest person to ever exist is <span id="smart">Alfred Einstein</span>.
+        </p>
+
+        <p>
+            <button id="btnCorrect">Correct the statement</button>
+        </p>
+    <script>
+        "use strict";
+        document.getElementById("btnCorrect").onclick = function() {
+            //const myName = document.createTextNode("Ernesto Basoalto");
+            // const myEm = document.createElement("em");
+            // myEm.appendChild(document.createTextNode("Ernesto Basoalto"));
+            const mySpan = document.getElementById("smart");
+            // mySpan.replaceChild(myEm, mySpan.firstChild);
+            mySpan.innerHTML = `<em>Ernesto Basoalto</em>`
+        };
+
+    </script>
+    </body>
+</html>

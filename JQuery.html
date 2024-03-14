@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<p id="para">
+    I am the <strong>KING</strong> of the world!
+</p>
+
+<script>
+    //Appends a new paragraph element to the end of the body
+     $("body").append("<p>I just got appended</p>")
+    //Removes the new paragraph
+     $("p:eq(1)").remove()
+    //OR ?????
+    //Appends a new paragraph element to the beginning of the body
+     $("body").prepend("<p>I just got appended</p>")
+     //Replace the first paragraph with a new paragraph element
+      $("p:first").replaceWith( "<p>Oh! I just got replaced!!</p>" );
+      //Add a new paragraph before the first paragraph
+      $("p:first").before( "<p>I have been added before the first paragraph</p>" );
+      //Add a new paragraph after the last paragraph
+      $("p:last").after( "<p>I have been added after the last paragraph</p>")
+      //Change the innerHTML of the 3rd paragraph element
+     $("p:eq(2)").html( "<strong>I have been Changed</strong>" );
+      //return the innerHTML value of the 2nd paragraph
+     let newText = $("p:eq(1)").html();
+      //Display the contents of newText to the webpage
+      document.write (newText)
+
+</script>
+</body>
+</html>

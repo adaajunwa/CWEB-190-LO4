@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "btn" type="button" value="Click Me"></input>
+<input id = "back" type="button" value="Back"></input>
+<button id="displayLocation">Display current URL</button>
+<button id="assignLocation">Assign to location object</button>
+<button id="callReplace">Call replace() method</button>
+<button id="open">Open New Window</button>
+<button id="resize">Resize & center Window</button>
+<p id = "para">I say <strong>Hello</strong> </p>
+
+<script>
+//call function openWin when the "btn" button is clicked
+    window.onload = function() {
+        document.getElementById("btn").onclick = openWin
+    };
+
+    //function openWin opens Amazon.ca
+    function openWin(){
+        window.open("https://www.Amazon.ca")
+    }
+
+//when button is clicked, function take us back to the last URL
+/*    document.getElementById("back").onclick = function() {
+        window.history.back();//history.back takes us back to last URL
+    };
+
+//when button is clicked, function shows the current browser URL
+    document.getElementById("displayLocation").onclick = function() {
+        window.alert(window.location);// location holds current URL
+    };
+
+ //when button is clicked, function replaces current URL with new URL
+    document.getElementById("assignLocation").onclick = function() {
+        window.location = "http://saskpolytech.ca";// replace with saskpolytech.ca
+    };
+
+//when button is clicked, function replaces current URL with new URL (not in history)
+    document.getElementById("callReplace").onclick = function() {
+        //replace overides the current URL, but is not logged in browser history
+        window.location.replace("https://sportsnet.ca");
+    };
+
+//navigator object contains information about the browser
+//document.write ("<br>" + window.navigator.userAgent )
+ //availHeight and availWidth contains info on the computer screen
+document.write("<br>" + window.screen.availHeight + ", " + window.screen.availWidth)
+//When button is clicked, opens a new window with the specified width and height
+document.getElementById("open").onclick = function() {
+    myWindow = window.open("", "", "width=200, height=100");
+
+};
+//When button is clicked, resizes new window, and moves it to the specified coordinates
+document.getElementById("resize").onclick = function() {
+    myWindow.resizeTo(500,400);// resize new window to width 500 and height 400
+    let hPosition =window.screen.availHeight/2 //get half the height of the screen
+    let vPosition =window.screen.availWidth/2 //get half the width of the screen
+    myWindow.moveTo(hPosition, vPosition); //move new window to specified coordinates
+};
+// getElementsByTagName method returns an array of all elements
+  //with a specified tag name
+let collection = document.getElementsByTagName("p")
+document.write ("<br>" + collection[0].innerHTML)//get the text of first element in array
+//get the parent element of the "para" paragraph
+ document.write ("<br>" + document.getElementById( "para" ).parentNode)
+//get all title tags and place in array titleAr
+let titleAr = document.getElementsByTagName("title")
+//display parent element of the first title tag
+document.write ("<br>" + titleAr[0].parentNode)
+
+//Get the second child node of the first paragraph element "para"
+document.write ("<br>" + collection[0].childNodes[1])
+//Get the next sibling of "para" second child node
+ document.write ("<br>" + collection[0].childNodes[1].nextSibling) */
+
+
+//create a paragraph element
+ let newPara = document.createElement( "p" );
+//create a text node
+let newTextNode = document.createTextNode( "Cheesiest movie line EVER" );
+//Make the text node a child of the paragraph element
+newPara.appendChild( newTextNode );
+// get the paragraph element
+let para = document.getElementById( "para" )
+// assign the parent node of the paragraph element to body variable
+ let body = para.parentNode;
+//append the paragraph element as a last child of the body element
+ body.appendChild( newPara );
+//remove new paragraph from body element
+  body.removeChild( newPara );
+//insert the new paragraph before the old paragraph ("para")
+ body.insertBefore( newPara, para );
+//replace new paragraph with old paragraph ("para")
+body.replaceChild( newPara, para );
+</script>
+</body>
+</html>

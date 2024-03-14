@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simple jQuery example</title>
+        <style type="text/css">
+            #result {
+                display: none;
+                background-color: #8CECE3;
+                border: 1px solid black;
+                padding: 3px;
+                width: 10em;
+            }
+        </style>
+        <script src="jquery-3.7.1.min.js"></script>
+    </head>
+
+    <body>
+    <h1> JQuery</h1>
+
+        <p>
+            Click the button below to test to see if you have
+            correctly installed jQuery
+        </p>
+        
+        <p>
+            <button onclick="$('#result').show('slow'); ">Click to test</button>
+        </p>
+        
+        <p id="result">
+            If you can see this paragraph, you have correctly installed jQuery!
+        </p>
+    <p>These are my hobbies:</p>
+    <ol class = "intro">
+        <li>Dancing</li>
+        <li>Watching Films</li>
+        <li>Listening to music</li>
+    </ol>
+    <p>These are my Favorite Fruits:</p>
+    <ul>
+        <li>Bananas</li>
+        <li>Red Grapes</li>
+        <li>Pineapples</li>
+        <li>Sweet Cherries</li>
+        <li><span>Passion Fruit</span></li>
+
+    </ul>
+
+    <script>
+        //Execute testJQuery function when button element
+        //is clicked
+        $(document).ready(function() {
+            $("button").on("click", testJQuery);
+        });
+function testJQuery() {
+    //Change css for elements with class intro
+    $(".intro").css("color","purple");
+    //Change css for all paragraph elements (p tags)
+   $("p").css("font-size", "large");
+    //Change css for first paragraph element
+    $( "p:first" ).css( "background-color", "yellow" );
+    //Change html text for third paragraph element
+   $( "p:eq(2)" ).html( "Hi There, you have correctly installed jQuery!" );
+    //Change css for all odd unordered list elements
+  $("ul li:odd").css("background-color", "yellow");
+    //An object can be passed in as a css method argument
+    //Change css for every 2nd unordered list elements
+     $("ul li:even").css({
+     "background-color": "green",
+     "border": "3px solid black"
+     });
+    //An object can be passed in as a css method argument
+    //Change css for every span element
+     $("span").css({
+     "background-color": "green",
+     "color": "red"
+     });
+
+}
+</script>
+
+    </body>
+</html>
